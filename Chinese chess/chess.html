@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: '標楷體', sans-serif;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background: rgb(255, 255, 255);
+        background: radial-gradient(circle, rgb(211, 211, 211) 0%, rgba(0, 0, 0, 0.815) 29%, rgb(0, 0, 0) 100%);
+      }
+
+      .big_container {
+        width: 700px;
+        height: 700px;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .container {
+        width: 500px;
+        height: 500px;
+        /* border: 5px solid rgb(27, 211, 20); */
+        /* box-shadow: 0px 6px 6px rgba(128, 128, 128, 0.575); */
+        box-sizing: border-box;
+        position: relative;
+        border-radius: 10px;
+        background: rgb(255, 255, 255);
+      }
+
+      table {
+        width: 400px;
+        height: 400px;
+        margin: 50px;
+        border-collapse: collapse;
+      }
+
+      td {
+        border: 1px solid rgb(122, 122, 122);
+      }
+
+      .black {
+        border: 1px solid black;
+        background: white;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 24px;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 40px;
+        box-shadow: 0px 3px 3px rgba(128, 128, 128, 0.575);
+      }
+      /* 黑車 */
+      .black_car_01 {
+        left: 10%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+      }
+      .black_car_02 {
+        right: 10%;
+        top: 10%;
+        transform: translate(50%, -50%);
+      }
+      /* 黑馬 */
+      .black_horse_01 {
+        left: 20%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+      }
+      .black_horse_02 {
+        right: 20%;
+        top: 10%;
+        transform: translate(50%, -50%);
+      }
+      /* 黑象 */
+      .black_elephant_01 {
+        left: 30%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+      }
+      .black_elephant_02 {
+        right: 30%;
+        top: 10%;
+        transform: translate(50%, -50%);
+      }
+      /* 黑士 */
+      .black_soldier_01 {
+        left: 40%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+      .black_soldier_02 {
+        right: 40%;
+        top: 10%;
+        transform: translate(50%, -50%);
+        z-index: 1;
+      }
+      /* 將 */
+      .black_king {
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+      /* 黑包 */
+      .black_gun_01 {
+        left: 20%;
+        top: 30%;
+        transform: translate(-50%, -80%);
+      }
+      .black_gun_02 {
+        right: 20%;
+        top: 30%;
+        transform: translate(50%, -80%);
+      }
+      /* 黑卒 */
+      .black_lolo_01 {
+        left: 10%;
+        top: 40%;
+        transform: translate(-50%, -90%);
+      }
+      .black_lolo_02 {
+        left: 30%;
+        top: 40%;
+        transform: translate(-50%, -90%);
+      }
+      .black_lolo_03 {
+        right: 50%;
+        top: 40%;
+        transform: translate(50%, -90%);
+      }
+      .black_lolo_04 {
+        right: 30%;
+        top: 40%;
+        transform: translate(50%, -90%);
+      }
+      .black_lolo_05 {
+        right: 10%;
+        top: 40%;
+        transform: translate(50%, -90%);
+      }
+
+      .red {
+        border: 1px solid black;
+        color: red;
+        background: white;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 24px;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 40px;
+        box-shadow: 0px 3px 3px rgba(128, 128, 128, 0.575);
+      }
+
+      /* 紅車 */
+      .red_car_01 {
+        left: 10%;
+        bottom: 10%;
+        transform: translate(-50%, 50%);
+      }
+      .red_car_02 {
+        right: 10%;
+        bottom: 10%;
+        transform: translate(50%, 50%);
+      }
+      /* 紅馬 */
+      .red_horse_01 {
+        left: 20%;
+        bottom: 10%;
+        transform: translate(-50%, 50%);
+      }
+      .red_horse_02 {
+        right: 20%;
+        bottom: 10%;
+        transform: translate(50%, 50%);
+      }
+      /* 紅象 */
+      .red_elephant_01 {
+        left: 30%;
+        bottom: 10%;
+        transform: translate(-50%, 50%);
+      }
+      .red_elephant_02 {
+        right: 30%;
+        bottom: 10%;
+        transform: translate(50%, 50%);
+      }
+      /* 紅士 */
+      .red_soldier_01 {
+        left: 40%;
+        bottom: 10%;
+        transform: translate(-50%, 50%);
+        z-index: 1;
+      }
+      .red_soldier_02 {
+        right: 40%;
+        bottom: 10%;
+        transform: translate(50%, 50%);
+        z-index: 1;
+      }
+      /* 將 */
+      .red_king {
+        left: 50%;
+        bottom: 10%;
+        transform: translate(-50%, 50%);
+        z-index: 1;
+      }
+      /* 紅包 */
+      .red_gun_01 {
+        left: 20%;
+        bottom: 30%;
+        transform: translate(-50%, 80%);
+      }
+      .red_gun_02 {
+        right: 20%;
+        bottom: 30%;
+        transform: translate(50%, 80%);
+      }
+      /* 紅卒 */
+      .red_lolo_01 {
+        left: 10%;
+        bottom: 40%;
+        transform: translate(-50%, 90%);
+      }
+      .red_lolo_02 {
+        left: 30%;
+        bottom: 40%;
+        transform: translate(-50%, 90%);
+      }
+      .red_lolo_03 {
+        right: 50%;
+        bottom: 40%;
+        transform: translate(50%, 90%);
+      }
+      .red_lolo_04 {
+        right: 30%;
+        bottom: 40%;
+        transform: translate(50%, 90%);
+      }
+      .red_lolo_05 {
+        right: 10%;
+        bottom: 40%;
+        transform: translate(50%, 90%);
+      }
+
+      .box {
+        border-top: 1px solid black;
+        box-sizing: border-box;
+        position: absolute;
+        width: 120px;
+        height: 60px;
+        transform: rotate(42deg);
+        left: 35%;
+        top: 18%;
+      }
+
+      .box1 {
+        border-top: 1px solid black;
+        box-sizing: border-box;
+        position: absolute;
+        width: 130px;
+        height: 60px;
+        transform: rotate(140deg);
+        left: 33%;
+        top: 9%;
+      }
+      .box2 {
+        border-top: 1px solid black;
+        box-sizing: border-box;
+        position: absolute;
+        width: 120px;
+        height: 60px;
+        transform: rotate(139deg);
+        left: 35%;
+        bottom: 18%;
+      }
+
+      .box3 {
+        border-top: 1px solid black;
+        box-sizing: border-box;
+        position: absolute;
+        width: 130px;
+        height: 60px;
+        transform: rotate(41deg);
+        left: 33%;
+        bottom: 8.5%;
+      }
+
+      .text {
+        position: absolute;
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        font-size: 30px;
+        font-weight: bold;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .text_one {
+        writing-mode: vertical-rl;
+        position: absolute;
+        font-size: 30px;
+        left: 5%;
+        color: white;
+      }
+
+      .text_two {
+        writing-mode: vertical-rl;
+        position: absolute;
+        font-size: 30px;
+        right: 5%;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="big_container">
+      <div class="text_one">棋盤裡，車無輪馬無韁，叫聲將軍提防提防</div>
+      <div class="text_two">圖畫裡，龍不吟虎不嘯，小小書僮可笑可笑</div>
+      <div class="container">
+        <div class="black black_car_01">車</div>
+        <div class="black black_car_02">車</div>
+        <div class="black black_horse_01">馬</div>
+        <div class="black black_horse_02">馬</div>
+        <div class="black black_elephant_01">象</div>
+        <div class="black black_elephant_02">象</div>
+        <div class="black black_soldier_01">士</div>
+        <div class="black black_soldier_02">士</div>
+        <div class="black black_king">將</div>
+        <div class="black black_gun_01">包</div>
+        <div class="black black_gun_02">包</div>
+        <div class="black black_lolo_01">卒</div>
+        <div class="black black_lolo_02">卒</div>
+        <div class="black black_lolo_03">卒</div>
+        <div class="black black_lolo_04">卒</div>
+        <div class="black black_lolo_05">卒</div>
+
+        <div class="red red_car_01">俥</div>
+        <div class="red red_car_02">俥</div>
+        <div class="red red_horse_01">傌</div>
+        <div class="red red_horse_02">傌</div>
+        <div class="red red_elephant_01">相</div>
+        <div class="red red_elephant_02">相</div>
+        <div class="red red_soldier_01">仕</div>
+        <div class="red red_soldier_02">仕</div>
+        <div class="red red_king">帥</div>
+        <div class="red red_gun_01">炮</div>
+        <div class="red red_gun_02">炮</div>
+        <div class="red red_lolo_01">兵</div>
+        <div class="red red_lolo_02">兵</div>
+        <div class="red red_lolo_03">兵</div>
+        <div class="red red_lolo_04">兵</div>
+        <div class="red red_lolo_05">兵</div>
+
+        <div class="box"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+
+        <div class="text">
+          <p>楚河</p>
+          <p>漢界</p>
+        </div>
+
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <!-- 合併 -->
+          <tr>
+            <td colspan="8"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
